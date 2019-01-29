@@ -21,7 +21,7 @@
                 ],
                 "team_b": [
                     "KT",
-                    "KS"
+                    "MZ"
                 ],
                 "winner": "team_a",
                 "zero": false
@@ -75,6 +75,47 @@
                 "team_b": [
                     "MZ",
                     "MA"
+                ],
+                "winner": "team_a",
+                "zero": false
+            }
+        ]
+    },
+    "3": {
+        "date": "2019/01/29",
+        "games": [
+            {
+                "team_a": [
+                    "MZ",
+                    "MA"
+                ],
+                "team_b": [
+                    "KT",
+                    "PPA"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "MZ",
+                    "KT"
+                ],
+                "team_b": [
+                    "MA",
+                    "PPA"
+                ],
+                "winner": "team_a",
+                "zero": true
+            },
+            {
+                "team_a": [
+                    "MZ",
+                    "PPA"
+                ],
+                "team_b": [
+                    "MA",
+                    "KT"
                 ],
                 "winner": "team_a",
                 "zero": false
