@@ -10,18 +10,26 @@ def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument(
-         "--log",
+        "-l",
+        "--log",
         help="Print events.",
         dest="log",
         action="store_true"
     )
     parser.add_argument(
-        "-l",
+        "-n",
         "--limit",
         help="Limit log entries",
         dest="limit",
         type=int,
         default=0
+    )
+    parser.add_argument(
+        "-t",
+        "--teams",
+        help="Log stats for teams.",
+        dest="teams",
+        action="store_true"
     )
     parser.add_argument(
         "-i",
@@ -79,6 +87,40 @@ def laod_events(data):
         events.append(Event(event["date"], event["games"]))
     #print("========= DONE ==========")
     return events
+
+
+def log_team(events):
+    teams_list = []
+    for event in events:
+        for game in event.games:
+            teams_list.append(sorted(game["team_b"]))
+            teams_list.append(sorted(game["team_a"]))
+    teams_set = set(tuple(team) for team in teams_list)
+    teams_stats = {}
+    for team in teams_set:
+        team_stats = {"wins":0, "loses":0, "zeros":0}
+        for event in events:
+            for game in event.games:
+                winner = game["winner"]
+                if winner == "team_a":
+                    loser = "team_b"
+                else:
+                    loser = "team_a"
+                if set(team).issubset(set(game[winner])):
+                    team_stats["wins"] = team_stats["wins"] + 1
+                elif set(team).issubset(set(game[loser])):
+                    team_stats["loses"] = team_stats["loses"] + 1
+                    if game["zero"]:
+                        team_stats["zeros"] = team_stats["zeros"] + 1
+        teams_stats[team] = team_stats
+    col_width = max(len(str(team)) for team in teams_stats.keys()) + 2
+    #col_width = 15
+    sequence = ("TEAM", colored("W", "green"), colored("L", "red"), colored("0", "blue"))
+    print(" ".join(word.ljust(col_width) for word in sequence))
+    cprint("-------------------------------", "yellow")
+    for team, stats in teams_stats.items():
+        sequence = (str(team), colored(str(stats["wins"]), "green"), colored(str(stats["loses"]), "red"), colored(str(stats["zeros"]), "blue"))
+        print(" ".join(word.ljust(col_width) for word in sequence))
 
 
 def log_events(events, limit=0):
@@ -177,6 +219,8 @@ def main():
         save_events(events)
     if args.log:
         log_events(events, args.limit)
+    if args.teams:
+        log_team(events)
 
 
 if __name__ == "__main__":
