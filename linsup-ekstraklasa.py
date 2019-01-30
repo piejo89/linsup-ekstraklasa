@@ -4,6 +4,7 @@ import json
 import datetime
 import argparse
 from termcolor import colored, cprint
+from prettytable import PrettyTable
 
 
 def parse_args():
@@ -113,14 +114,11 @@ def log_team(events):
                     if game["zero"]:
                         team_stats["zeros"] = team_stats["zeros"] + 1
         teams_stats[team] = team_stats
-    col_width = max(len(str(team)) for team in teams_stats.keys()) + 2
-    #col_width = 15
-    sequence = ("TEAM", colored("W", "green"), colored("L", "red"), colored("0", "blue"))
-    print(" ".join(word.ljust(col_width) for word in sequence))
-    cprint("-------------------------------", "yellow")
+    table = PrettyTable()
+    table.field_names = [ "TEAM", colored("WINS", "green"), colored("LOSES", "red"), colored("ZEROS", "blue") ]
     for team, stats in teams_stats.items():
-        sequence = (str(team), colored(str(stats["wins"]), "green"), colored(str(stats["loses"]), "red"), colored(str(stats["zeros"]), "blue"))
-        print(" ".join(word.ljust(col_width) for word in sequence))
+        table.add_row([str(team), colored(str(stats["wins"]), "green"), colored(str(stats["loses"]), "red"), colored(str(stats["zeros"]), "blue")])
+    print(table.get_string(sortby=colored("WINS", "green"), reversesort=True))
 
 
 def log_events(events, limit=0):
