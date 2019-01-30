@@ -169,7 +169,7 @@ def save_events(events):
         event_params= {}
         event_params["date"] = event.date
         event_params["games"] = event.games
-        data[Event.eid_counter] = event_params
+        data[event.eid] = event_params
     with open('events.json', 'w') as file:
         json.dump(data, file, sort_keys=True, indent=4)
 
@@ -217,6 +217,7 @@ def main():
     if args.input:
         add_event(args.date, args.input, events)
         save_events(events)
+        log_events(events, 1)
     if args.log:
         log_events(events, args.limit)
     if args.teams:
