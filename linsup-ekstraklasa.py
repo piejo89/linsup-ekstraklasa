@@ -115,9 +115,17 @@ def log_team(events):
                         team_stats["zeros"] = team_stats["zeros"] + 1
         teams_stats[team] = team_stats
     table = PrettyTable()
-    table.field_names = [ "TEAM", colored("WINS", "green"), colored("LOSES", "red"), colored("ZEROS", "blue") ]
+    table.field_names = [ "TEAM", colored("WINS", "green"), colored("LOSES", "red"), colored("ZEROS", "blue"), "RATIO" ]
     for team, stats in teams_stats.items():
-        table.add_row([str(team), colored(str(stats["wins"]), "green"), colored(str(stats["loses"]), "red"), colored(str(stats["zeros"]), "blue")])
+        team = str(team)
+        wins = colored(str(stats["wins"]), "green")
+        loses = colored(str(stats["loses"]), "red")
+        zeros = colored(str(stats["zeros"]), "blue")
+        try:
+            ratio = "{0:.1f}".format(stats["wins"] / (stats["wins"] + stats["loses"]) * 100)
+        except ZeroDivisionError:
+            ratio = 0
+        table.add_row([team, wins, loses, zeros, ratio])
     print(table.get_string(sortby=colored("WINS", "green"), reversesort=True))
 
 
