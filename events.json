@@ -162,5 +162,87 @@
                 "zero": false
             }
         ]
+    },
+    "5": {
+        "date": "2019/02/01",
+        "games": [
+            {
+                "team_a": [
+                    "GC",
+                    "PPA"
+                ],
+                "team_b": [
+                    "KT",
+                    "MZ"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "GC",
+                    "KT"
+                ],
+                "team_b": [
+                    "PPA",
+                    "MZ"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "GC",
+                    "MZ"
+                ],
+                "team_b": [
+                    "PPA",
+                    "KT"
+                ],
+                "winner": "team_b",
+                "zero": false
+            }
+        ]
+    },
+    "6": {
+        "date": "2019/02/01",
+        "games": [
+            {
+                "team_a": [
+                    "MH",
+                    "PPA"
+                ],
+                "team_b": [
+                    "KT",
+                    "MZ"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "MH",
+                    "KT"
+                ],
+                "team_b": [
+                    "PPA",
+                    "MZ"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "MH",
+                    "MZ"
+                ],
+                "team_b": [
+                    "PPA",
+                    "KT"
+                ],
+                "winner": "team_b",
+                "zero": false
+            }
+        ]
     }
 }
