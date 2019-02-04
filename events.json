@@ -244,5 +244,46 @@
                 "zero": false
             }
         ]
+    },
+    "7": {
+        "date": "2019/02/04",
+        "games": [
+            {
+                "team_a": [
+                    "PPA",
+                    "MZ"
+                ],
+                "team_b": [
+                    "KT",
+                    "ML"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "PPA",
+                    "KT"
+                ],
+                "team_b": [
+                    "MZ",
+                    "ML"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "PPA",
+                    "ML"
+                ],
+                "team_b": [
+                    "MZ",
+                    "KT"
+                ],
+                "winner": "team_b",
+                "zero": false
+            }
+        ]
     }
 }
