@@ -80,7 +80,7 @@ class Event:
         return result
 
 
-def laod_events(data):
+def load_events(data):
     events = []
     #print("======== LOADING ========")
     for eid, event in data.items():
@@ -219,7 +219,7 @@ def main():
     args = parse_args()
     with open("events.json") as file:
         data = json.load(file)
-    events = laod_events(data)
+    events = load_events(data)
     if args.input:
         add_event(args.date, args.input, events)
         save_events(events)
