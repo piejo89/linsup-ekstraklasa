@@ -654,5 +654,46 @@
                 "zero": false
             }
         ]
+    },
+    "17": {
+        "date": "2019/02/15",
+        "games": [
+            {
+                "team_a": [
+                    "GC",
+                    "PPA"
+                ],
+                "team_b": [
+                    "MA",
+                    "KT"
+                ],
+                "winner": "team_b",
+                "zero": true
+            },
+            {
+                "team_a": [
+                    "GC",
+                    "MA"
+                ],
+                "team_b": [
+                    "PPA",
+                    "KT"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "GC",
+                    "KT"
+                ],
+                "team_b": [
+                    "PPA",
+                    "MA"
+                ],
+                "winner": "team_a",
+                "zero": false
+            }
+        ]
     }
 }
