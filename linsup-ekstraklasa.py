@@ -10,33 +10,26 @@ from prettytable import PrettyTable
 def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument(
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
         "-l",
         "--log",
+        nargs='?',
         help="Print events.",
-        dest="log",
-        action="store_true"
-    )
-    parser.add_argument(
-        "-n",
-        "--limit",
-        help="Limit log entries",
-        dest="limit",
         type=int,
+        const=0,
         default=0
     )
-    parser.add_argument(
+    group.add_argument(
         "-t",
         "--teams",
         help="Log stats for teams.",
-        dest="teams",
         action="store_true"
     )
-    parser.add_argument(
+    group.add_argument(
         "-i",
         "--input",
         help="Input event. Provide participants as a list.",
-        dest="input",
         type=str,
         nargs="+"
     )
@@ -47,7 +40,10 @@ def parse_args():
         dest="date",
         default=datetime.datetime.now().strftime("%Y/%m/%d")
     )
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.log is None and not args.input and not args.teams:
+    	parser.error('No arguments provided.')
+    return args
 
 
 class Event:
@@ -224,8 +220,8 @@ def main():
         add_event(args.date, args.input, events)
         save_events(events)
         log_events(events, 1)
-    if args.log:
-        log_events(events, args.limit)
+    if args.log is not None:
+        log_events(events, args.log)
     if args.teams:
         log_team(events)
 
