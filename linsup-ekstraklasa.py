@@ -47,10 +47,9 @@ def parse_args():
 
 
 class Event:
-    eid_counter = 0
-    def __init__(self, date, games):
-        Event.eid_counter += 1
-        self.eid = Event.eid_counter
+
+    def __init__(self, date, games, id):
+        self.eid = id
         self.date = date
         self.games = games
         self.mistrz = self._get("mistrz")
@@ -81,9 +80,9 @@ def load_events(data):
     #print("======== LOADING ========")
     for eid, event in data.items():
         #print("loading data for event #{}".format(eid))
-        events.append(Event(event["date"], event["games"]))
+        events.append(Event(event["date"], event["games"], int(eid)))
     #print("========= DONE ==========")
-    return events
+    return sorted(events, key=lambda x: x.eid)
 
 
 def log_team(events):
