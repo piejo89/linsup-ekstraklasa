@@ -48,8 +48,14 @@ def parse_args():
 
 class Event:
 
-    def __init__(self, date, games, id):
-        self.eid = id
+    eid_counter = 0
+
+    def __init__(self, date, games, id=None):
+        Event.eid_counter += 1
+        if id is None:
+            self.eid = Event.eid_counter
+        else:
+            self.eid = id
         self.date = date
         self.games = games
         self.mistrz = self._get("mistrz")
