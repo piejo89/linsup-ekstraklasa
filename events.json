@@ -697,7 +697,7 @@
         ]
     },
     "18": {
-        "date": "2019/02/19",
+        "date": "2019/02/18",
         "games": [
             {
                 "team_a": [
@@ -733,6 +733,88 @@
                     "MA"
                 ],
                 "winner": "team_a",
+                "zero": false
+            }
+        ]
+    },
+    "19": {
+        "date": "2019/02/19",
+        "games": [
+            {
+                "team_a": [
+                    "KT",
+                    "MA"
+                ],
+                "team_b": [
+                    "ML",
+                    "PPA"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "KT",
+                    "ML"
+                ],
+                "team_b": [
+                    "MA",
+                    "PPA"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "KT",
+                    "PPA"
+                ],
+                "team_b": [
+                    "MA",
+                    "ML"
+                ],
+                "winner": "team_b",
+                "zero": false
+            }
+        ]
+    },
+    "20": {
+        "date": "2019/02/19",
+        "games": [
+            {
+                "team_a": [
+                    "JB",
+                    "MA"
+                ],
+                "team_b": [
+                    "GC",
+                    "PPA"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "JB",
+                    "GC"
+                ],
+                "team_b": [
+                    "MA",
+                    "PPA"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "JB",
+                    "PPA"
+                ],
+                "team_b": [
+                    "MA",
+                    "GC"
+                ],
+                "winner": "team_b",
                 "zero": false
             }
         ]
