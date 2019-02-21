@@ -818,5 +818,46 @@
                 "zero": false
             }
         ]
+    },
+    "21": {
+        "date": "2019/02/20",
+        "games": [
+            {
+                "team_a": [
+                    "KS",
+                    "ML"
+                ],
+                "team_b": [
+                    "KT",
+                    "MA"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "KS",
+                    "KT"
+                ],
+                "team_b": [
+                    "ML",
+                    "MA"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "KS",
+                    "MA"
+                ],
+                "team_b": [
+                    "ML",
+                    "KT"
+                ],
+                "winner": "team_a",
+                "zero": false
+            }
+        ]
     }
 }
