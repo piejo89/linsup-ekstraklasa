@@ -983,7 +983,7 @@
             }
         ]
     },
-    "25": {
+    "26": {
         "date": "2019/03/01",
         "games": [
             {
@@ -1018,6 +1018,47 @@
                 "team_b": [
                     "PPA",
                     "KT"
+                ],
+                "winner": "team_b",
+                "zero": false
+            }
+        ]
+    },
+    "25": {
+        "date": "2019/02/28",
+        "games": [
+            {
+                "team_a": [
+                    "KT",
+                    "MO"
+                ],
+                "team_b": [
+                    "MA",
+                    "JD"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "KT",
+                    "MA"
+                ],
+                "team_b": [
+                    "MO",
+                    "JD"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "KT",
+                    "JD"
+                ],
+                "team_b": [
+                    "MO",
+                    "MA"
                 ],
                 "winner": "team_b",
                 "zero": false
