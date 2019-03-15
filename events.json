@@ -1351,5 +1351,46 @@
                 "zero": false
             }
         ]
+    },
+    "34": {
+        "date": "2019/03/15",
+        "games": [
+            {
+                "team_a": [
+                    "GC",
+                    "PPA"
+                ],
+                "team_b": [
+                    "MH",
+                    "DM"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "GC",
+                    "MH"
+                ],
+                "team_b": [
+                    "PPA",
+                    "DM"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "GC",
+                    "DM"
+                ],
+                "team_b": [
+                    "PPA",
+                    "MH"
+                ],
+                "winner": "team_b",
+                "zero": false
+            }
+        ]
     }
 }
