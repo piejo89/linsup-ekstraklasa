@@ -1556,5 +1556,46 @@
                 "zero": false
             }
         ]
+    },
+    "39": {
+        "date": "2019/03/29",
+        "games": [
+            {
+                "team_a": [
+                    "MO",
+                    "ML"
+                ],
+                "team_b": [
+                    "MZ",
+                    "KT"
+                ],
+                "winner": "team_a",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "MO",
+                    "MZ"
+                ],
+                "team_b": [
+                    "ML",
+                    "KT"
+                ],
+                "winner": "team_b",
+                "zero": false
+            },
+            {
+                "team_a": [
+                    "MO",
+                    "KT"
+                ],
+                "team_b": [
+                    "ML",
+                    "MZ"
+                ],
+                "winner": "team_a",
+                "zero": true
+            }
+        ]
     }
 }
